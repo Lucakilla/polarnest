@@ -481,6 +481,7 @@ li {
   grid-template-columns: minmax(0, 1fr) minmax(0, 0.96fr);
   gap: 40px;
   align-items: center;
+  margin-top: 10px;
   min-height: clamp(700px, 78vh, 860px);
   padding-top: 42px;
   padding-inline: 30px;
