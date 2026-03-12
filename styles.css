@@ -1,6 +1,6 @@
 :root {
-  --bg: #edf1f5;
-  --bg-soft: #dbe1e8;
+  --bg: #e6ebe1;
+  --bg-soft: #d5ddd2;
   --surface: #f1eee8;
   --surface-strong: rgba(241, 238, 232, 0.88);
   --green: #5f7465;
@@ -41,11 +41,10 @@ body {
   color: var(--text);
   font-family: "Manrope", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(184, 196, 211, 0.82), transparent 36%),
-    radial-gradient(circle at 82% 10%, rgba(99, 120, 144, 0.22), transparent 28%),
-    radial-gradient(circle at 52% -4%, rgba(136, 155, 179, 0.22), transparent 34%),
-    radial-gradient(circle at 58% 100%, rgba(185, 177, 164, 0.18), transparent 26%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+    radial-gradient(circle at top left, rgba(201, 211, 199, 0.58), transparent 34%),
+    radial-gradient(circle at 84% 14%, rgba(126, 147, 131, 0.16), transparent 24%),
+    radial-gradient(circle at 74% 100%, rgba(16, 78, 139, 0.34), transparent 28%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 38%, #c8d0ca 58%, #5e7696 82%, #104e8b 100%);
   min-height: 100vh;
 }
 
@@ -154,12 +153,21 @@ body.nav-open {
   gap: 4px;
 }
 
-.brand__wordmark,
-.brand--footer {
+.brand__wordmark {
   font-family: "Fraunces", serif;
   font-size: 1.4rem;
   font-weight: 600;
   letter-spacing: -0.03em;
+}
+
+.brand__logo {
+  display: block;
+  width: clamp(164px, 16vw, 228px);
+  height: auto;
+}
+
+.brand--footer .brand__logo {
+  width: clamp(170px, 18vw, 242px);
 }
 
 .brand__subline {
@@ -1503,13 +1511,24 @@ li {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    gap: 14px;
-    padding: 12px;
-    border-radius: 30px;
+    gap: 10px;
+    padding: 10px 12px 10px 14px;
+    border-radius: 28px;
   }
 
   .brand {
-    gap: 2px;
+    gap: 1px;
+    min-height: 48px;
+    justify-content: center;
+  }
+
+  .brand__logo {
+    width: clamp(144px, 38vw, 184px);
+  }
+
+  .brand__subline {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
   }
 
   .nav-toggle {
@@ -1547,8 +1566,8 @@ li {
   .js .site-nav {
     display: grid;
     grid-column: 1 / -1;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
+    grid-template-columns: 1fr;
+    gap: 6px;
     max-height: 0;
     margin: 0;
     padding: 0;
@@ -1570,10 +1589,11 @@ li {
   }
 
   .js .site-header.is-open .site-nav {
-    max-height: 520px;
-    margin-top: 6px;
-    padding: 10px;
+    max-height: min(420px, calc(100svh - 150px));
+    margin-top: 4px;
+    padding: 8px;
     opacity: 1;
+    overflow: auto;
     pointer-events: auto;
     transform: translateY(0);
     border-color: rgba(30, 33, 29, 0.08);
@@ -1602,7 +1622,7 @@ li {
   }
 
   .site-nav a {
-    min-height: 56px;
+    min-height: 52px;
     display: flex;
     align-items: center;
     padding: 0 16px;
@@ -1642,7 +1662,7 @@ li {
   }
 
   .hero {
-    padding-top: 18px;
+    padding-top: 10px;
   }
 
   .hero__details {
@@ -1743,7 +1763,7 @@ li {
   }
 
   .hero__chips {
-    margin-top: 24px;
+    display: none;
   }
 
   .footer-grid {
@@ -1784,9 +1804,38 @@ li {
 }
 
 @media (max-width: 520px) {
-  .js .site-nav,
-  .js .site-header.is-open .site-nav {
-    grid-template-columns: 1fr;
+  .site-header {
+    padding-top: 10px;
+  }
+
+  .topbar {
+    padding: 8px 10px 8px 12px;
+  }
+
+  .brand {
+    min-height: 44px;
+  }
+
+  .brand__logo {
+    width: 142px;
+  }
+
+  .brand__subline {
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+  }
+
+  .nav-toggle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .hero {
+    padding-top: 4px;
+  }
+
+  .page-hero__inner {
+    padding-top: 36px;
   }
 }
 
