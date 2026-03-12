@@ -119,11 +119,11 @@
             <a class="button button--secondary" href="#kontakt">Beratung anfragen</a>
           </div>
 
-          <div class="hero__chips" aria-label="Markenmerkmale">
-            <span>ab 38.700 EUR</span>
-            <span>individuell planbar</span>
-            <span>hochwertig gefertigt</span>
-          </div>
+          <ul class="hero__chips" aria-label="Markenmerkmale">
+            <li>ab 38.700 EUR</li>
+            <li>individuell planbar</li>
+            <li>hochwertig gefertigt</li>
+          </ul>
         </div>
 
         <div class="hero__visual reveal delay-1">
@@ -151,7 +151,7 @@
         </div>
       </section>
 
-      <section class="section" id="vorteile" aria-labelledby="benefits-title">
+      <section class="section section--tone-mist" id="vorteile" aria-labelledby="benefits-title">
         <span class="anchor-fix" id="idee" aria-hidden="true"></span>
         <div class="section-heading reveal">
           <p class="eyebrow">Premium-Vorteile</p>
@@ -220,11 +220,11 @@
         </div>
       </section>
 
-      <section class="section section--panel" id="preis" aria-labelledby="price-title">
+      <section class="section section--panel section--tone-sage" id="preis" aria-labelledby="price-title">
         <div class="pricing-layout">
           <div class="pricing-copy reveal">
             <p class="eyebrow">Preis und Qualitaet</p>
-            <h2 id="price-title">Ein Polarnest beginnt bei 38.700 EUR.</h2>
+            <h2 id="price-title">Ein guter Einstieg beginnt mit Haltung, Material und Ruhe.</h2>
             <p>
               Dieser Einstieg steht nicht fuer schnelle Massenware, sondern fuer
               einen klar komponierten nordischen Wohnraum mit Haltung. Je nach
@@ -281,7 +281,7 @@
         </div>
       </section>
 
-      <section class="section" id="leben" aria-labelledby="lifestyle-title">
+      <section class="section section--tone-forest" id="leben" aria-labelledby="lifestyle-title">
         <span class="anchor-fix" id="kollektion" aria-hidden="true"></span>
         <div class="section-heading reveal">
           <p class="eyebrow">Willkommen im neuen Lebensgefuehl</p>
@@ -295,8 +295,7 @@
 
         <div class="slider-shell reveal" data-slider>
           <div class="slider-header">
-            <p class="slider-header__caption">Horizontale Auswahl</p>
-            <div class="slider-controls" aria-label="Lebensgefuehl Navigation">
+            <div class="slider-controls" role="group" aria-label="Lebensgefuehl Navigation">
               <button class="slider-button" type="button" data-slider-prev aria-label="Vorherige Karte">
                 <span aria-hidden="true">&larr;</span>
               </button>
@@ -323,6 +322,26 @@
                 <p>
                   Klare Blickachsen, weiche Materialien und ein ruhiger
                   Raumfluss schaffen das Gefuehl, angekommen zu sein.
+                </p>
+              </div>
+            </article>
+
+            <article class="lifestyle-card surface-card">
+              <figure class="lifestyle-card__media">
+                <img
+                  src="assets/images/bedroom-detail.jpg"
+                  alt="Warmer Schlafbereich mit klaren Linien und ruhiger Lichtstimmung."
+                  width="1600"
+                  height="1200"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="lifestyle-card__body">
+                <p class="card-kicker">Licht und Rueckzug</p>
+                <h3>Raeume, die Geborgenheit sichtbar machen</h3>
+                <p>
+                  Sanfte Materialien, ruhige Farben und eine klare Ordnung
+                  lassen kompakte Wohnraeume weich, offen und hochwertig wirken.
                 </p>
               </div>
             </article>
@@ -394,7 +413,7 @@
         </div>
       </section>
 
-      <section class="section section--split" id="qualitaet" aria-labelledby="quality-title">
+      <section class="section section--split section--tone-stone" id="qualitaet" aria-labelledby="quality-title">
         <div class="showcase-media reveal">
           <figure class="showcase-media__frame surface-card">
             <img
@@ -439,7 +458,7 @@
         </div>
       </section>
 
-      <section class="section" id="komfort" aria-labelledby="comfort-title">
+      <section class="section section--tone-warm" id="komfort" aria-labelledby="comfort-title">
         <span class="anchor-fix" id="prozess" aria-hidden="true"></span>
         <div class="section-heading reveal">
           <p class="eyebrow">Komfort und Nutzen</p>
@@ -489,7 +508,7 @@
         </div>
       </section>
 
-      <section class="section" id="besonders" aria-labelledby="special-title">
+      <section class="section section--tone-mist" id="besonders" aria-labelledby="special-title">
         <div class="section-heading reveal">
           <p class="eyebrow">Was Polarnest besonders macht</p>
           <h2 id="special-title">Drei Perspektiven auf nordische Geborgenheit.</h2>
@@ -562,7 +581,7 @@
         </div>
       </section>
 
-      <section class="section section--faq" id="faq" aria-labelledby="faq-title">
+      <section class="section section--faq section--tone-stone" id="faq" aria-labelledby="faq-title">
         <div class="section-heading reveal">
           <p class="eyebrow">FAQ</p>
           <h2 id="faq-title">Haeufige Fragen, klar beantwortet.</h2>
@@ -665,7 +684,7 @@
         </div>
       </section>
 
-      <section class="section section--contact" id="kontakt" aria-labelledby="contact-title">
+      <section class="section section--contact section--tone-sage" id="kontakt" aria-labelledby="contact-title">
         <div class="contact-layout">
           <div class="contact-copy reveal">
             <p class="eyebrow">Kontakt und Anfrage</p>
