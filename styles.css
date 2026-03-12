@@ -482,7 +482,7 @@ li {
   gap: 40px;
   align-items: center;
   min-height: clamp(700px, 78vh, 860px);
-  padding-top: 34px;
+  padding-top: 42px;
   padding-inline: 30px;
   border-radius: 42px;
   border: 1px solid rgba(247, 243, 236, 0.08);
