@@ -1,38 +1,40 @@
 # Polarnest
 
-Statische One-Page-Landingpage fuer eine Premium-Marke fuer nordisch inspirierte Minihaeuser.
+Statische Premium-Website fuer die Marke `Polarnest` mit Startseite, Impressum und Datenschutz.
 
-## Inhalt
+## Projektstruktur
 
-- `index.html`: Seitenstruktur und Inhalte
-- `styles.css`: komplettes Layout, Farben, Typografie und Responsiveness
-- `script.js`: kleine Reveal-Animationen und Footer-Jahr
-- `favicon.svg`: simples Marken-Icon
+- `index.html`: Homepage mit allen Marken-, Inhalts- und Kontaktbereichen
+- `impressum.html`: gestaltete Impressum-Seite
+- `datenschutz.html`: gestaltete Datenschutz-Seite
+- `styles.css`: gemeinsames Designsystem fuer alle Seiten
+- `script.js`: Navigation, Scroll-Reveals, Slider, FAQ und Formularlogik
+- `assets/images/`: lokal gespeicherte Bildassets
+- `robots.txt` und `sitemap.xml`: einfache SEO-Basics
 
-## Lokal ansehen
-
-Du kannst die Seite direkt im Browser oeffnen oder im Ordner `polarnest-site` einen kleinen Server starten:
+## Lokal starten
 
 ```bash
 python3 -m http.server 4173
 ```
 
-Danach unter `http://localhost:4173` aufrufen.
+Danach im Browser `http://localhost:4173` oeffnen.
 
-## GitHub und Vercel
+## Formular
 
-Falls du dieses Projekt als eigenes Repo nutzen willst:
+Das Anfrageformular ist aktuell bewusst ohne Server-Backend umgesetzt.
 
-```bash
-git init -b main
-git add .
-git commit -m "Create Polarnest landing page"
-```
+- Beim Absenden wird eine vorbefuellte E-Mail an `info@gut-bau.com` vorbereitet.
+- Dadurch gibt es keinen stillen "Fake Submit" und keinen kaputten Button.
 
-Danach ein neues GitHub-Repository anlegen, den Remote setzen und pushen.
+Wenn spaeter echte serverseitige Verarbeitung gewuenscht ist, bieten sich zwei saubere Wege an:
 
-In Vercel kannst du anschliessend einfach das Repository importieren. Da die Seite statisch ist, brauchst du keine Build-Schritte und keinen Framework-Setup.
+1. Vercel Function fuer Formularannahme und Validierung
+2. Formularservice wie Formspree oder Resend fuer den E-Mail-Versand
 
-## Hinweis
+## Deployment
 
-Die Inhalte und Kontaktdaten sind als hochwertige Markenbasis geschrieben und koennen jetzt mit echten Angeboten, Preisen, Fotos oder Formularen erweitert werden.
+Das Projekt ist als statische Website fuer GitHub und Vercel ausgelegt.
+
+- Push nach `main`
+- Vercel deployed automatisch

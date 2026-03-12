@@ -3,288 +3,775 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Polarnest | Premium Rückzugsorte aus dem Norden</title>
+    <title>Polarnest | Nordische Wohnräume mit Ruhe, Qualität und Charakter</title>
     <meta
       name="description"
-      content="Polarnest ist eine premium One-Page-Marke für nordisch inspirierte Minihäuser mit familiärem Charakter, warmen Materialien und ruhigem Design."
+      content="Polarnest ist die Premium-Marke fuer individuell planbare nordische Wohnraeume von Gut Bau. Entdecke hochwertige Polarnest Haeuser ab 38.700 Euro."
     />
+    <meta name="theme-color" content="#F5F3EE" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Polarnest | Nordische Wohnraeume mit Ruhe, Qualitaet und Charakter" />
+    <meta
+      property="og:description"
+      content="Kompakte Premiumhaeuser aus dem Norden. Hochwertig gefertigt, individuell planbar und mit nordischer Geborgenheit gestaltet."
+    />
+    <meta property="og:url" content="https://polarnest.vercel.app/" />
+    <meta property="og:image" content="https://polarnest.vercel.app/assets/images/hero-exterior.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Polarnest | Nordische Wohnraeume mit Ruhe, Qualitaet und Charakter" />
+    <meta
+      name="twitter:description"
+      content="Polarnest Haeuser vereinen nordische Ruhe, hochwertige Fertigung und durchdachte Raumloesungen."
+    />
+    <meta name="twitter:image" content="https://polarnest.vercel.app/assets/images/hero-exterior.jpg" />
+    <link rel="canonical" href="https://polarnest.vercel.app/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" as="image" href="assets/images/hero-exterior.jpg" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
     <script defer src="script.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Polarnest",
+        "url": "https://polarnest.vercel.app/",
+        "email": "info@gut-bau.com",
+        "brand": {
+          "@type": "Brand",
+          "name": "Polarnest"
+        },
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "Gut Bau GmbH"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Normannenstrasse 44b",
+          "postalCode": "41849",
+          "addressLocality": "Wassenberg",
+          "addressCountry": "DE"
+        }
+      }
+    </script>
   </head>
-  <body>
-    <div class="page-glow page-glow--left" aria-hidden="true"></div>
-    <div class="page-glow page-glow--right" aria-hidden="true"></div>
+  <body class="page page-home" data-page="home">
+    <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
 
-    <header class="topbar">
-      <a class="brand" href="#top" aria-label="Polarnest Startseite">Polarnest</a>
-      <nav class="topnav" aria-label="Hauptnavigation">
-        <a href="#idee">Idee</a>
-        <a href="#kollektion">Kollektion</a>
-        <a href="#prozess">Prozess</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-      <a class="button button--ghost" href="#kontakt">Projekt anfragen</a>
+    <header class="site-header">
+      <div class="topbar">
+        <a class="brand" href="index.html" aria-label="Polarnest Startseite">
+          <span class="brand__wordmark">Polarnest</span>
+          <span class="brand__subline">Rueckzugsorte aus dem Norden</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          data-nav-toggle
+        >
+          <span class="nav-toggle__label">Menue</span>
+          <span class="nav-toggle__icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" data-nav aria-label="Hauptnavigation">
+          <a href="#hero" data-nav-link>Start</a>
+          <a href="#vorteile" data-nav-link>Vorteile</a>
+          <a href="#preis" data-nav-link>Preis</a>
+          <a href="#leben" data-nav-link>Lebensgefuehl</a>
+          <a href="#faq" data-nav-link>FAQ</a>
+          <a href="#kontakt" data-nav-link>Kontakt</a>
+        </nav>
+
+        <a class="button button--primary topbar__cta" href="#kontakt">Beratung anfragen</a>
+      </div>
     </header>
 
-    <main id="top">
-      <section class="hero section">
-        <div class="hero__copy reveal">
-          <p class="eyebrow">Familiengeführt. Nordisch. Maßgeschneidert.</p>
-          <h1>
-            Premium tiny living,
-            <span>neu gedacht als Polarnest.</span>
-          </h1>
+    <main id="main-content">
+      <section class="section hero" id="hero" aria-labelledby="hero-title">
+        <div class="hero__content reveal">
+          <p class="eyebrow">Polarnest von Gut Bau</p>
+          <h1 id="hero-title">Nordische Wohnraeume, die Ruhe sichtbar machen.</h1>
           <p class="hero__lead">
-            Polarnest sind keine Tiny Houses von der Stange. Es sind warme,
-            kompakte Rückzugsorte mit norwegischer Seele, gebaut für Nähe,
-            Ruhe und das gute Gefühl, zuhause zu landen.
+            Polarnest Haeuser verbinden warme Materialien, klare Architektur und
+            durchdachte Raumloesungen zu einem Rueckzugsort aus dem Norden.
+            Hochwertig gefertigt, individuell planbar und fuer Menschen gedacht,
+            die bewusst wohnen moechten.
           </p>
 
           <div class="hero__actions">
-            <a class="button" href="#kollektion">Polarnester entdecken</a>
-            <a class="button button--secondary" href="#idee">Unsere Haltung</a>
+            <a class="button button--primary" href="#vorteile">Polarnest entdecken</a>
+            <a class="button button--secondary" href="#kontakt">Beratung anfragen</a>
           </div>
 
-          <div class="hero__stats">
-            <article class="stat-card">
-              <strong>Aus dem Norden</strong>
-              <span>klare Linien, ehrliche Materialien, leise Farben</span>
-            </article>
-            <article class="stat-card">
-              <strong>Familiär gedacht</strong>
-              <span>für Paare, Kinder, Gäste und gemeinsame Zeit</span>
-            </article>
-            <article class="stat-card">
-              <strong>Premium Komfort</strong>
-              <span>kleiner Grundriss, großes Wohngefühl</span>
-            </article>
+          <div class="hero__chips" aria-label="Markenmerkmale">
+            <span>ab 38.700 EUR</span>
+            <span>individuell planbar</span>
+            <span>hochwertig gefertigt</span>
           </div>
         </div>
 
-        <div class="hero__visual reveal reveal--delay-1">
-          <div class="hero-card">
-            <p class="hero-card__kicker">Signature Nest</p>
-            <h2>Fjord 52</h2>
+        <div class="hero__visual reveal delay-1">
+          <figure class="hero-media surface-card">
+            <img
+              src="assets/images/hero-exterior.jpg"
+              alt="Warm beleuchtetes kompaktes Premiumhaus im verschneiten nordischen Wald."
+              width="1800"
+              height="1400"
+              fetchpriority="high"
+            />
+          </figure>
+
+          <article class="hero-floating hero-floating--price surface-card">
+            <p class="hero-floating__label">Einstieg</p>
+            <strong>ab 38.700 EUR</strong>
+            <span>als sorgfaeltig geplanter Start in nordische Geborgenheit</span>
+          </article>
+
+          <article class="hero-floating hero-floating--detail surface-card">
+            <p class="hero-floating__label">Materialitaet</p>
+            <strong>Holz, Licht, Ruhe</strong>
+            <span>hochwertige Oberflaechen und klare Proportionen fuer dauerhaftes Wohlgefuehl</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="vorteile" aria-labelledby="benefits-title">
+        <span class="anchor-fix" id="idee" aria-hidden="true"></span>
+        <div class="section-heading reveal">
+          <p class="eyebrow">Premium-Vorteile</p>
+          <h2 id="benefits-title">Durchdacht bis zum Moment des Ankommens.</h2>
+          <p>
+            Ein Polarnest soll nicht nur gut aussehen, sondern sich von der
+            ersten Entscheidung bis zum Einzug klar, ruhig und hochwertig
+            anfuehlen.
+          </p>
+        </div>
+
+        <div class="benefit-grid">
+          <article class="benefit-card surface-card reveal">
+            <div class="icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation">
+                <path d="M4 12.5 9 17l11-11" />
+              </svg>
+            </div>
+            <h3>Bezugsfertig gedacht</h3>
             <p>
-              Panoramafenster, Schlafloft, Spa-Bad und eine Terrasse für
-              langsame Morgen mit Blick auf Wald, Wasser oder Weite.
+              Planung und Ausfuehrung sind so angelegt, dass der Einzug nicht
+              wie ein zweites Bauprojekt wirkt, sondern wie ein klar gefuehrter
+              Abschluss.
             </p>
-            <div class="hero-card__meta">
-              <span>4-6 Personen</span>
-              <span>Ganzjahreskomfort</span>
+          </article>
+
+          <article class="benefit-card surface-card reveal delay-1">
+            <div class="icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation">
+                <path d="M12 3v18M3 12h18" />
+              </svg>
+            </div>
+            <h3>Individuell planbar</h3>
+            <p>
+              Nutzung, Grundriss, Materialien und Ausbaustufe richten sich nach
+              Alltag, Standort und dem Charakter des kuenftigen Wohnraums.
+            </p>
+          </article>
+
+          <article class="benefit-card surface-card reveal delay-2">
+            <div class="icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation">
+                <path d="M6 19h12M7 16l1.5-8h7L17 16M9.5 8a2.5 2.5 0 1 1 5 0" />
+              </svg>
+            </div>
+            <h3>Hochwertige Fertigung</h3>
+            <p>
+              Belastbare Konstruktionen, sorgfaeltig ausgewaehlte Materialien
+              und ruhige Oberflaechen schaffen eine Qualitaet, die man taeglich
+              spuert.
+            </p>
+          </article>
+
+          <article class="benefit-card surface-card reveal delay-3">
+            <div class="icon-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" role="presentation">
+                <path d="M5 7h14M5 12h14M5 17h14" />
+              </svg>
+            </div>
+            <h3>Alles aus einer Hand</h3>
+            <p>
+              Beratung, Planung, Fertigung, Lieferung und Aufbau greifen in
+              einem abgestimmten Ablauf ineinander und vermeiden unnötige Reibung.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--panel" id="preis" aria-labelledby="price-title">
+        <div class="pricing-layout">
+          <div class="pricing-copy reveal">
+            <p class="eyebrow">Preis und Qualitaet</p>
+            <h2 id="price-title">Ein Polarnest beginnt bei 38.700 EUR.</h2>
+            <p>
+              Dieser Einstieg steht nicht fuer schnelle Massenware, sondern fuer
+              einen klar komponierten nordischen Wohnraum mit Haltung. Je nach
+              Modell, Ausbaustufe und Standort wird daraus eine Loesung, die
+              sorgfaeltig auf Leben, Nutzung und Budget abgestimmt ist.
+            </p>
+            <p class="pricing-note">
+              Der Preis ist als Orientierungswert fuer kompakte Modelle zu
+              verstehen. Planung, Ausstattung und Standortbedingungen werden
+              transparent gemeinsam definiert.
+            </p>
+          </div>
+
+          <article class="price-card surface-card reveal delay-1">
+            <p class="price-card__label">Orientierungswert</p>
+            <strong>38.700 EUR</strong>
+            <span>als Einstieg in ein hochwertig gefertigtes Polarnest Haus</span>
+          </article>
+
+          <div class="quality-grid">
+            <article class="quality-card surface-card reveal">
+              <h3>Massive und langlebige Bauweise</h3>
+              <p>
+                Tragende Qualitaet, sinnvolle Konstruktionen und Substanz, die
+                nicht auf kurzfristige Wirkung, sondern auf langfristige Nutzung
+                ausgelegt ist.
+              </p>
+            </article>
+
+            <article class="quality-card surface-card reveal delay-1">
+              <h3>Manufaktur-Qualitaet</h3>
+              <p>
+                Ausfuehrung mit Sorgfalt statt Baukasten-Routine, damit jedes
+                Detail ruhig, stimmig und glaubwuerdig wirkt.
+              </p>
+            </article>
+
+            <article class="quality-card surface-card reveal delay-2">
+              <h3>Hochwertige Hoelzer und Materialien aus dem Norden</h3>
+              <p>
+                Die Materialwelt bleibt natuerlich, warm und praezise, ohne laut
+                zu werden oder kuenstlich luxuriös zu wirken.
+              </p>
+            </article>
+
+            <article class="quality-card surface-card reveal delay-3">
+              <h3>Alles unter einem Dach</h3>
+              <p>
+                Von der Idee bis zum Einzug entsteht ein abgestimmter Prozess,
+                der Planung, Fertigung und Umsetzung sinnvoll zusammenfuehrt.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="leben" aria-labelledby="lifestyle-title">
+        <span class="anchor-fix" id="kollektion" aria-hidden="true"></span>
+        <div class="section-heading reveal">
+          <p class="eyebrow">Willkommen im neuen Lebensgefuehl</p>
+          <h2 id="lifestyle-title">Wohnen mit nordischer Ruhe beginnt im Alltag.</h2>
+          <p>
+            Polarnest Haeuser sind fuer Menschen gemacht, die bewusste
+            Entscheidungen, klare Raumgefuehle und ein entspanntes Zuhause mit
+            echter Atmosphaere suchen.
+          </p>
+        </div>
+
+        <div class="slider-shell reveal" data-slider>
+          <div class="slider-header">
+            <p class="slider-header__caption">Horizontale Auswahl</p>
+            <div class="slider-controls" aria-label="Lebensgefuehl Navigation">
+              <button class="slider-button" type="button" data-slider-prev aria-label="Vorherige Karte">
+                <span aria-hidden="true">&larr;</span>
+              </button>
+              <button class="slider-button" type="button" data-slider-next aria-label="Naechste Karte">
+                <span aria-hidden="true">&rarr;</span>
+              </button>
             </div>
           </div>
 
-          <div class="floating-chip floating-chip--top">inspiriert von Norwegen</div>
-          <div class="floating-chip floating-chip--bottom">warm minimal statt kühl steril</div>
-        </div>
-      </section>
+          <div class="slider-track" data-slider-track tabindex="0">
+            <article class="lifestyle-card surface-card">
+              <figure class="lifestyle-card__media">
+                <img
+                  src="assets/images/lake-cabin.jpg"
+                  alt="Holzhaus in ruhiger Naturlandschaft am Wasser."
+                  width="1600"
+                  height="1200"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="lifestyle-card__body">
+                <p class="card-kicker">Ankommen und wohlfuehlen</p>
+                <h3>Ein Ort, der sofort vertraut wirkt</h3>
+                <p>
+                  Klare Blickachsen, weiche Materialien und ein ruhiger
+                  Raumfluss schaffen das Gefuehl, angekommen zu sein.
+                </p>
+              </div>
+            </article>
 
-      <section class="section" id="idee">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Was ein Polarnest ausmacht</p>
-          <h2>Nordische Ruhe, aber mit Herz.</h2>
-          <p>
-            Die Marke verbindet die Klarheit skandinavischer Architektur mit
-            einem familiären Wohngefühl. Jedes Detail soll ruhig, hochwertig
-            und nahbar wirken, nie protzig und nie austauschbar.
-          </p>
-        </div>
+            <article class="lifestyle-card surface-card">
+              <figure class="lifestyle-card__media">
+                <img
+                  src="assets/images/workshop-detail.jpg"
+                  alt="Handwerkliche Bearbeitung eines Holzelements in der Werkstatt."
+                  width="1600"
+                  height="1200"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="lifestyle-card__body">
+                <p class="card-kicker">Bewusst gebaut</p>
+                <h3>Qualitaet entsteht vor dem ersten Tag im Haus</h3>
+                <p>
+                  Sorgfalt in der Fertigung macht sich spaeter in Ruhe,
+                  Praezision und einem stimmigen Wohngefuehl bemerkbar.
+                </p>
+              </div>
+            </article>
 
-        <div class="feature-grid">
-          <article class="feature-card reveal">
-            <div class="feature-card__index">01</div>
-            <h3>Materialien mit Wärme</h3>
-            <p>
-              Helles Holz, mineralische Oberflächen und weiche Stoffe schaffen
-              ein ruhiges, geerdetes Innenleben.
-            </p>
-          </article>
-          <article class="feature-card reveal reveal--delay-1">
-            <div class="feature-card__index">02</div>
-            <h3>Familiennah geplant</h3>
-            <p>
-              Flexible Schlafplätze, Stauraum mit Köpfchen und gemeinschaftliche
-              Zonen machen kleine Grundrisse alltagstauglich.
-            </p>
-          </article>
-          <article class="feature-card reveal reveal--delay-2">
-            <div class="feature-card__index">03</div>
-            <h3>Rückzug mit Anspruch</h3>
-            <p>
-              Polarnest soll sich anfühlen wie ein Boutique-Retreat, das man
-              jeden Tag bewohnen möchte.
-            </p>
-          </article>
-        </div>
-      </section>
+            <article class="lifestyle-card surface-card">
+              <figure class="lifestyle-card__media">
+                <img
+                  src="assets/images/interior-loft.jpg"
+                  alt="Heller Innenraum mit Holz, Galerie und ruhiger Materialwirkung."
+                  width="1600"
+                  height="1200"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="lifestyle-card__body">
+                <p class="card-kicker">Individuell planbar</p>
+                <h3>Raumloesungen, die zu Lebensgewohnheiten passen</h3>
+                <p>
+                  Schlafen, Arbeiten, Kochen und Rueckzug lassen sich so
+                  arrangieren, dass kompakte Flaechen grosszuegig wirken.
+                </p>
+              </div>
+            </article>
 
-      <section class="section section--band" id="kollektion">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Die Kollektion</p>
-          <h2>Drei Nester, drei Arten von Ruhe.</h2>
-          <p>
-            Vom kompakten Wochenendhaus bis zum großzügigen Familiennest bleibt
-            die Handschrift gleich: ruhig, weich und nordisch präzise.
-          </p>
-        </div>
-
-        <div class="collection-grid">
-          <article class="collection-card reveal">
-            <p class="collection-card__label">für zwei</p>
-            <h3>Skog 34</h3>
-            <p>
-              Das kleinste Polarnest für Wochenenden, Seenähe und reduziertes
-              Wohnen mit viel Atmosphäre.
-            </p>
-            <ul>
-              <li>offener Wohnraum mit Kaminachse</li>
-              <li>Fensterbank als Leselounge</li>
-              <li>ideales Retreat für Paare</li>
-            </ul>
-          </article>
-
-          <article class="collection-card collection-card--featured reveal reveal--delay-1">
-            <p class="collection-card__label">für Familien</p>
-            <h3>Fjord 52</h3>
-            <p>
-              Das Signature-Modell mit Loft, großzügiger Küche und einer
-              Raumwirkung, die weit größer wirkt als die Fläche.
-            </p>
-            <ul>
-              <li>Schlafloft plus ruhiger Elternbereich</li>
-              <li>Panoramafront mit Terrassenübergang</li>
-              <li>perfekt für ganzjährige Auszeiten</li>
-            </ul>
-          </article>
-
-          <article class="collection-card reveal reveal--delay-2">
-            <p class="collection-card__label">für Gastgeber</p>
-            <h3>Aurora 68</h3>
-            <p>
-              Ein großzügiges Polarnest für private Retreats, Gästebetriebe oder
-              besondere Orte mit Premium-Anspruch.
-            </p>
-            <ul>
-              <li>zwei Schlafzonen und ruhige Spa-Stimmung</li>
-              <li>Inselküche mit Familienfokus</li>
-              <li>stark für Hospitality und Vermietung</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section section--split" id="prozess">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Wie Polarnest entsteht</p>
-          <h2>Persönlich statt anonym.</h2>
-          <p>
-            Die Reise soll sich so anfühlen wie das Haus selbst: klar geführt,
-            hochwertig begleitet und sehr nah an deinen Lebensgewohnheiten.
-          </p>
-        </div>
-
-        <div class="process-list">
-          <article class="process-card reveal">
-            <span>01</span>
-            <h3>Nordic Briefing</h3>
-            <p>
-              Wir starten mit Lebensstil, Grundstück, Nutzung und dem Gefühl,
-              das dein Polarnest auslösen soll.
-            </p>
-          </article>
-          <article class="process-card reveal reveal--delay-1">
-            <span>02</span>
-            <h3>Family-first Layout</h3>
-            <p>
-              Grundriss, Stauraum und Blickachsen werden so entwickelt, dass
-              sich Nähe nie eng anfühlt.
-            </p>
-          </article>
-          <article class="process-card reveal reveal--delay-2">
-            <span>03</span>
-            <h3>Material Curating</h3>
-            <p>
-              Holz, Texturen, Licht und Metalloberflächen werden zu einer
-              ruhigen, hochwertigen Gesamtstimmung komponiert.
-            </p>
-          </article>
-          <article class="process-card reveal reveal--delay-3">
-            <span>04</span>
-            <h3>Ankommen</h3>
-            <p>
-              Am Ende steht kein Produkt von der Stange, sondern ein Nest, das
-              sofort vertraut wirkt.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section section--story">
-        <div class="story-card reveal">
-          <p class="eyebrow">Unsere Herkunft</p>
-          <h2>Geboren aus der Idee, dass klein nicht kalt sein muss.</h2>
-          <p>
-            Polarnest übersetzt die stille Kraft nordischer Landschaften in ein
-            Zuhauseformat, das menschlich bleibt. Weniger Quadratmeter,
-            mehr Atmosphäre. Weniger Masse, mehr Charakter.
-          </p>
-        </div>
-
-        <div class="story-points">
-          <article class="story-point reveal">
-            <h3>Norwegische Klarheit</h3>
-            <p>
-              Dachlinien, Proportionen und Farbwelten orientieren sich an
-              Küstenarchitektur, Bergen und Winterlicht.
-            </p>
-          </article>
-          <article class="story-point reveal reveal--delay-1">
-            <h3>Familiäre Geborgenheit</h3>
-            <p>
-              Jeder Entwurf denkt gemeinsame Routinen mit: Kochen, Lesen,
-              Spielen, Zurückziehen und Draußensein.
-            </p>
-          </article>
-          <article class="story-point reveal reveal--delay-2">
-            <h3>Premium ohne Lautstärke</h3>
-            <p>
-              Luxus zeigt sich hier in Materialruhe, Lichtführung und dem
-              Gefühl, dass alles genau dort sitzt, wo es hingehört.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section section--cta" id="kontakt">
-        <div class="cta-card reveal">
-          <p class="eyebrow">Bereit für dein eigenes Polarnest?</p>
-          <h2>Wir gestalten eine Marke und ein Zuhausegefühl in einem.</h2>
-          <p>
-            Diese Landingpage ist bereit, um als Basis für GitHub und Vercel
-            live zu gehen. Texte, Modelle, Preise und echte Kontaktdaten können
-            wir im nächsten Schritt gemeinsam schärfen.
-          </p>
-          <div class="hero__actions">
-            <a class="button" href="mailto:hello@polarnest.house?subject=Polarnest%20Projektanfrage">
-              hello@polarnest.house
-            </a>
-            <a class="button button--secondary" href="#top">zur Startseite</a>
+            <article class="lifestyle-card surface-card">
+              <figure class="lifestyle-card__media">
+                <img
+                  src="assets/images/family-forest.jpg"
+                  alt="Familie auf einem ruhigen Weg im Wald."
+                  width="1600"
+                  height="1200"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="lifestyle-card__body">
+                <p class="card-kicker">Effizient wohnen</p>
+                <h3>Weniger Ueberfluss, mehr Alltag mit Leichtigkeit</h3>
+                <p>
+                  Durchdachte Funktionen, kluge Stauraeume und warme Details
+                  schaffen nordische Geborgenheit ohne Ballast.
+                </p>
+              </div>
+            </article>
           </div>
+
+          <div class="slider-progress" aria-hidden="true">
+            <span data-slider-progress></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--split" id="qualitaet" aria-labelledby="quality-title">
+        <div class="showcase-media reveal">
+          <figure class="showcase-media__frame surface-card">
+            <img
+              src="assets/images/bedroom-detail.jpg"
+              alt="Warmer Schlafbereich mit Holz, Textilien und ruhiger Lichtstimmung."
+              width="1600"
+              height="1200"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+
+        <div class="showcase-copy">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Komfort mit Haltung</p>
+            <h2 id="quality-title">Qualitaet, die nicht laut werden muss.</h2>
+            <p>
+              Ein Polarnest verbindet Komfort, Materialruhe und intelligente
+              Planung zu einem Wohngefuehl, das wertig wirkt, ohne je aufgesetzt
+              zu sein.
+            </p>
+          </div>
+
+          <div class="showcase-info">
+            <article class="showcase-card surface-card reveal delay-1">
+              <h3>Komfort und Nachhaltigkeit vereint</h3>
+              <p>
+                Effiziente Flaechen, durchdachte Konstruktionen und sorgsam
+                eingesetzte Materialien machen bewusstes Wohnen glaubwuerdig und
+                alltagstauglich.
+              </p>
+            </article>
+
+            <article class="showcase-card surface-card reveal delay-2">
+              <h3>Qualitaet, die man spueren kann</h3>
+              <p>
+                Im Zusammenspiel von Holz, Licht, Haptik und Stauraum entsteht
+                jene stille Wertigkeit, die gute Architektur dauerhaft tragfaehig macht.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="komfort" aria-labelledby="comfort-title">
+        <span class="anchor-fix" id="prozess" aria-hidden="true"></span>
+        <div class="section-heading reveal">
+          <p class="eyebrow">Komfort und Nutzen</p>
+          <h2 id="comfort-title">Klar geplant. Sorgfaeltig umgesetzt. Ruhig im Ergebnis.</h2>
+          <p>
+            Jedes Polarnest ist darauf ausgelegt, den Alltag leichter zu machen
+            und zugleich dauerhaft schoen zu bleiben.
+          </p>
+        </div>
+
+        <div class="comfort-grid">
+          <article class="comfort-card surface-card reveal">
+            <p class="card-kicker">Bezugsfertig</p>
+            <h3>Vom Konzept bis zum Einzug begleitet</h3>
+            <p>
+              Ein klarer Projektablauf hilft dabei, Entscheidungen frueh zu
+              ordnen und den Weg zum fertigen Wohnraum verlässlich zu steuern.
+            </p>
+          </article>
+
+          <article class="comfort-card surface-card reveal delay-1">
+            <p class="card-kicker">Flexible Grundrisse</p>
+            <h3>Flaeche, die auf Nutzung reagiert</h3>
+            <p>
+              Familienzeit, Rueckzug, Arbeiten oder Gastnutzung werden in einem
+              kompakten, intelligent gegliederten Raumkonzept zusammengebracht.
+            </p>
+          </article>
+
+          <article class="comfort-card surface-card reveal delay-2">
+            <p class="card-kicker">Lieferung und Aufbau</p>
+            <h3>Koordiniert statt improvisiert</h3>
+            <p>
+              Gut Bau begleitet die Umsetzung mit Blick auf Zeit, Ablauforganisation
+              und den sauberen Uebergang vom Werk zum Standort.
+            </p>
+          </article>
+
+          <article class="comfort-card surface-card reveal delay-3">
+            <p class="card-kicker">Nachhaltig</p>
+            <h3>Bewusst in Material und Nutzung</h3>
+            <p>
+              Wertige Konstruktionen, natuerliche Oberflaechen und effiziente
+              Raumloesungen foerdern einen ressourcenbewussten Wohnansatz.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="besonders" aria-labelledby="special-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Was Polarnest besonders macht</p>
+          <h2 id="special-title">Drei Perspektiven auf nordische Geborgenheit.</h2>
+          <p>
+            Polarnest versteht Architektur nicht als laute Geste, sondern als
+            sorgfaeltige Verbindung aus Proportion, Material und Lebensnahe.
+          </p>
+        </div>
+
+        <div class="special-grid">
+          <article class="special-card surface-card reveal">
+            <figure class="special-card__media">
+              <img
+                src="assets/images/cabin-meadow.jpg"
+                alt="Kompaktes Holzhaus in heller, natuerlicher Landschaft."
+                width="1600"
+                height="1200"
+                loading="lazy"
+              />
+            </figure>
+            <div class="special-card__body">
+              <h3>Design mit Weitblick</h3>
+              <p>
+                Proportionen, Fensterformate und Materialwechsel sind so
+                komponiert, dass ein Polarnest auch auf kleiner Flaeche ruhig,
+                wertig und selbstverstaendlich wirkt.
+              </p>
+            </div>
+          </article>
+
+          <article class="special-card surface-card reveal delay-1">
+            <figure class="special-card__media">
+              <img
+                src="assets/images/workshop-detail.jpg"
+                alt="Bearbeitung eines Holzelements mit handwerklicher Praezision."
+                width="1600"
+                height="1200"
+                loading="lazy"
+              />
+            </figure>
+            <div class="special-card__body">
+              <h3>Bauqualitaet, die haelt</h3>
+              <p>
+                Gute Ausfuehrung ist hier kein Zusatz, sondern Grundhaltung. Sie
+                zeigt sich in Haptik, Passung, Belastbarkeit und einem
+                verlaesslichen Gesamtbild.
+              </p>
+            </div>
+          </article>
+
+          <article class="special-card surface-card reveal delay-2">
+            <figure class="special-card__media">
+              <img
+                src="assets/images/family-forest.jpg"
+                alt="Familie unterwegs in ruhiger Natur."
+                width="1600"
+                height="1200"
+                loading="lazy"
+              />
+            </figure>
+            <div class="special-card__body">
+              <h3>Alltag, der leicht faellt</h3>
+              <p>
+                Stauraum, Wege, Rueckzugszonen und gemeinschaftliche Bereiche
+                werden so abgestimmt, dass aus Architektur ein gelassenes
+                Wohngefuehl entsteht.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--faq" id="faq" aria-labelledby="faq-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title">Haeufige Fragen, klar beantwortet.</h2>
+          <p>
+            Gute Entscheidungen brauchen Transparenz. Deshalb beantworten wir
+            die wichtigsten Fragen von Anfang an.
+          </p>
+        </div>
+
+        <div class="accordion" data-accordion>
+          <article class="accordion__item surface-card reveal" data-accordion-item>
+            <button
+              class="accordion__trigger"
+              type="button"
+              id="faq-trigger-1"
+              aria-expanded="true"
+              aria-controls="faq-panel-1"
+            >
+              <span>Wie schnell kann ich einziehen?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel is-open" id="faq-panel-1" role="region" aria-labelledby="faq-trigger-1">
+              <div class="accordion__panel-inner">
+                <p>
+                  Der genaue Zeitrahmen richtet sich nach Modell, Ausbaustufe,
+                  Standort und den noetigen Vorbereitungen am Grundstueck. In
+                  vielen Faellen laesst sich der Weg bis zum Einzug deutlich
+                  kompakter organisieren als bei einem klassischen Einzelbauvorhaben.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="accordion__item surface-card reveal delay-1" data-accordion-item>
+            <button
+              class="accordion__trigger"
+              type="button"
+              id="faq-trigger-2"
+              aria-expanded="false"
+              aria-controls="faq-panel-2"
+            >
+              <span>Kann ich mein Polarnest individuell gestalten?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel" id="faq-panel-2" role="region" aria-labelledby="faq-trigger-2">
+              <div class="accordion__panel-inner">
+                <p>
+                  Ja. Grundriss, Ausbaustufe, Materialitaet und Nutzungsschwerpunkte
+                  werden auf Ihren Alltag abgestimmt. So entsteht ein Polarnest
+                  Haus, das nicht nach Standard aussieht, sondern zu Ihnen passt.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="accordion__item surface-card reveal delay-2" data-accordion-item>
+            <button
+              class="accordion__trigger"
+              type="button"
+              id="faq-trigger-3"
+              aria-expanded="false"
+              aria-controls="faq-panel-3"
+            >
+              <span>Was ist im Standard enthalten?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel" id="faq-panel-3" role="region" aria-labelledby="faq-trigger-3">
+              <div class="accordion__panel-inner">
+                <p>
+                  Zum Standard gehoeren die abgestimmte Gebaeudehuelle, die
+                  definierte Grundausstattung sowie die fuer das jeweilige Modell
+                  vorgesehene Innenraumloesung. Welche Details enthalten sind,
+                  wird vor der Beauftragung transparent und verbindlich geklaert.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="accordion__item surface-card reveal delay-3" data-accordion-item>
+            <button
+              class="accordion__trigger"
+              type="button"
+              id="faq-trigger-4"
+              aria-expanded="false"
+              aria-controls="faq-panel-4"
+            >
+              <span>Uebernimmt Gut Bau Lieferung und Aufbau?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel" id="faq-panel-4" role="region" aria-labelledby="faq-trigger-4">
+              <div class="accordion__panel-inner">
+                <p>
+                  Ja. Gut Bau begleitet Lieferung und Aufbau im Rahmen des
+                  abgestimmten Leistungsumfangs und sorgt fuer einen koordinierten
+                  Uebergang von der Fertigung zum Standort.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--contact" id="kontakt" aria-labelledby="contact-title">
+        <div class="contact-layout">
+          <div class="contact-copy reveal">
+            <p class="eyebrow">Kontakt und Anfrage</p>
+            <h2 id="contact-title">Gemeinsam zum passenden nordischen Wohnraum.</h2>
+            <p>
+              Wir planen mit Ihnen einen Wohnraum, der zu Alltag, Budget und
+              Standort passt. Ruhig, klar und mit dem Anspruch, dass am Ende
+              nicht nur ein Haus entsteht, sondern ein glaubwuerdiger Ort zum
+              Ankommen.
+            </p>
+
+            <div class="contact-points">
+              <article class="contact-point surface-card">
+                <h3>Direkter Kontakt</h3>
+                <p><a href="mailto:info@gut-bau.com">info@gut-bau.com</a></p>
+              </article>
+
+              <article class="contact-point surface-card">
+                <h3>Rechtlicher Traeger</h3>
+                <p>Gut Bau GmbH, Normannenstrasse 44b, 41849 Wassenberg</p>
+              </article>
+            </div>
+          </div>
+
+          <form class="contact-form surface-card reveal delay-1" data-contact-form novalidate>
+            <div class="form-row">
+              <label class="field">
+                <span>Name</span>
+                <input type="text" name="name" autocomplete="name" required />
+              </label>
+
+              <label class="field">
+                <span>E-Mail</span>
+                <input type="email" name="email" autocomplete="email" required />
+              </label>
+            </div>
+
+            <div class="form-row form-row--compact">
+              <label class="field">
+                <span>Telefon optional</span>
+                <input type="tel" name="phone" autocomplete="tel" />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Nachricht oder Projektziel</span>
+              <textarea
+                name="message"
+                rows="6"
+                placeholder="Erzaehlen Sie kurz, wie Sie Ihr Polarnest nutzen moechten."
+                required
+              ></textarea>
+            </label>
+
+            <button class="button button--primary form-submit" type="submit">
+              Anfrage vorbereiten
+            </button>
+
+            <p class="form-note">
+              Das Formular ist im Frontend vorbereitet und oeffnet aktuell Ihr
+              Mailprogramm an <a href="mailto:info@gut-bau.com">info@gut-bau.com</a>.
+              Fuer eine spaetere serverseitige Verarbeitung kann eine Vercel
+              Function oder ein Formularservice ergaenzt werden.
+            </p>
+
+            <p class="form-status" data-form-status aria-live="polite"></p>
+          </form>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <p>Polarnest. Premium Rückzugsorte aus dem Norden.</p>
-      <p>&copy; <span id="year"></span> Polarnest</p>
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <a class="brand brand--footer" href="index.html">Polarnest</a>
+          <p class="footer-copy">
+            Polarnest ist die Premium-Marke fuer nordische Wohnraeume der Gut Bau GmbH.
+            Warm, ruhig, architektonisch und hochwertig gefertigt.
+          </p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer Navigation">
+          <a href="#hero">Start</a>
+          <a href="#vorteile">Vorteile</a>
+          <a href="#preis">Preis</a>
+          <a href="#leben">Lebensgefuehl</a>
+          <a href="#faq">FAQ</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+
+        <div class="footer-contact">
+          <p><strong>Kontakt</strong></p>
+          <p><a href="mailto:info@gut-bau.com">info@gut-bau.com</a></p>
+          <p>Gut Bau GmbH, Normannenstrasse 44b, 41849 Wassenberg</p>
+        </div>
+
+        <div class="footer-legal">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Polarnest</p>
+        <p>Polarnest. Wohnen mit nordischer Ruhe.</p>
+      </div>
     </footer>
   </body>
 </html>
