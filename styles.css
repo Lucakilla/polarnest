@@ -41,10 +41,10 @@ body {
   color: var(--text);
   font-family: "Manrope", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(201, 211, 199, 0.58), transparent 34%),
-    radial-gradient(circle at 84% 14%, rgba(126, 147, 131, 0.16), transparent 24%),
-    radial-gradient(circle at 74% 100%, rgba(16, 78, 139, 0.34), transparent 28%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 38%, #c8d0ca 58%, #5e7696 82%, #104e8b 100%);
+    radial-gradient(circle at 18% 14%, rgba(245, 243, 238, 0.84), transparent 24%),
+    radial-gradient(circle at 82% 8%, rgba(25, 49, 82, 0.58), transparent 24%),
+    radial-gradient(circle at 76% 100%, rgba(126, 147, 131, 0.18), transparent 26%),
+    linear-gradient(180deg, #04080f 0%, #09101d 11%, #10203b 24%, #1c3658 41%, #406583 58%, #91a39e 79%, var(--bg) 100%);
   min-height: 100vh;
 }
 
@@ -151,6 +151,7 @@ body.nav-open {
   display: inline-flex;
   flex-direction: column;
   gap: 4px;
+  padding-left: 8px;
 }
 
 .brand__wordmark {
@@ -175,6 +176,8 @@ body.nav-open {
   font-size: 0.78rem;
   letter-spacing: 0.16em;
   line-height: 1.1;
+  margin-top: 6px;
+  padding-left: 6px;
   text-transform: uppercase;
 }
 
@@ -283,6 +286,7 @@ body.nav-open {
 
 .nav-toggle {
   display: none;
+  align-self: center;
 }
 
 .section {
@@ -578,7 +582,7 @@ li {
   object-fit: cover;
   backface-visibility: hidden;
   transform: translateZ(0);
-  transition: transform 420ms ease;
+  transition: transform 560ms ease;
 }
 
 .media-focus-hero {
@@ -1397,9 +1401,9 @@ li {
   transform: translateY(26px);
   filter: blur(0);
   transition:
-    opacity 760ms ease,
-    transform 760ms ease,
-    filter 760ms ease;
+    opacity 920ms ease,
+    transform 920ms ease,
+    filter 920ms ease;
 }
 
 .js .reveal.reveal--left {
@@ -1427,15 +1431,15 @@ li {
 }
 
 .delay-1 {
-  transition-delay: 100ms;
+  transition-delay: 140ms;
 }
 
 .delay-2 {
-  transition-delay: 180ms;
+  transition-delay: 260ms;
 }
 
 .delay-3 {
-  transition-delay: 260ms;
+  transition-delay: 380ms;
 }
 
 .benefit-card,
@@ -1517,7 +1521,7 @@ li {
   }
 
   .brand {
-    gap: 1px;
+    gap: 2px;
     min-height: 48px;
     justify-content: center;
   }
@@ -1529,6 +1533,8 @@ li {
   .brand__subline {
     font-size: 0.72rem;
     letter-spacing: 0.14em;
+    margin-top: 6px;
+    padding-left: 5px;
   }
 
   .nav-toggle {
@@ -1538,6 +1544,7 @@ li {
     width: 46px;
     height: 46px;
     margin-left: auto;
+    margin-top: 1px;
     border: 1px solid rgba(30, 33, 29, 0.08);
     border-radius: 50%;
     background: rgba(241, 238, 232, 0.82);
@@ -1823,6 +1830,8 @@ li {
   .brand__subline {
     font-size: 0.68rem;
     letter-spacing: 0.13em;
+    margin-top: 7px;
+    padding-left: 4px;
   }
 
   .nav-toggle {
