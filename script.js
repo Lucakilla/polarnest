@@ -226,39 +226,187 @@ const contactForm = document.querySelector("[data-contact-form]");
 
 if (contactForm instanceof HTMLFormElement) {
   const status = contactForm.querySelector("[data-form-status]");
+  const submitButton = contactForm.querySelector("[data-form-button]");
+  const recipient = "info@gut-bau.com";
+  const endpoint = `https://formsubmit.co/ajax/${encodeURIComponent(recipient)}`;
+  const topicField = contactForm.querySelector("#contact-topic");
+  const messageField = contactForm.querySelector("#contact-message");
+  const consentField = contactForm.querySelector("#contact-agree");
+  const observedFields = Array.from(
+    contactForm.querySelectorAll("input, select, textarea"),
+  );
 
-  contactForm.addEventListener("submit", (event) => {
+  function showStatus(message, type) {
+    if (!(status instanceof HTMLElement)) {
+      return;
+    }
+
+    status.textContent = message;
+    status.className = "gf-toast show";
+
+    if (type === "ok") {
+      status.classList.add("ok");
+    } else if (type === "err") {
+      status.classList.add("err");
+    }
+  }
+
+  function clearStatus() {
+    if (!(status instanceof HTMLElement)) {
+      return;
+    }
+
+    status.textContent = "";
+    status.className = "gf-toast";
+  }
+
+  function updateFormState() {
+    if (!(submitButton instanceof HTMLButtonElement)) {
+      return;
+    }
+
+    const hasTopic = topicField instanceof HTMLSelectElement && topicField.value !== "";
+    const hasMessage =
+      messageField instanceof HTMLTextAreaElement && messageField.value.trim() !== "";
+    const hasConsent =
+      consentField instanceof HTMLInputElement && consentField.checked;
+
+    submitButton.disabled = !(contactForm.checkValidity() && hasTopic && hasMessage && hasConsent);
+  }
+
+  async function parseResponse(response) {
+    const rawText = await response.text();
+
+    if (!rawText) {
+      return {};
+    }
+
+    try {
+      return JSON.parse(rawText);
+    } catch {
+      return { message: rawText };
+    }
+  }
+
+  function buildPayload(debugId) {
+    const formData = new FormData(contactForm);
+    const subjectBase = String(formData.get("_subject") || "GUTBAU Anfrage");
+
+    return {
+      name: String(formData.get("name") || "").trim(),
+      email: String(formData.get("email") || "").trim(),
+      Thema: String(formData.get("Thema") || "").trim(),
+      Telefon: String(formData.get("Telefon") || "").trim() || "nicht angegeben",
+      Nachricht: String(formData.get("Nachricht") || "").trim(),
+      Einwilligung: formData.get("Einwilligung") ? "Ja" : "Nein",
+      _subject: `${subjectBase} - ${debugId}`,
+      _replyto: String(formData.get("email") || "").trim(),
+      _captcha: "false",
+      _template: "table",
+      _url: window.location.href,
+    };
+  }
+
+  async function sendJson(payload) {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(payload),
+      mode: "cors",
+      cache: "no-store",
+    });
+
+    const data = await parseResponse(response);
+
+    if (!response.ok || String(data.success) !== "true") {
+      throw new Error(String(data.message || `HTTP ${response.status}`));
+    }
+  }
+
+  async function sendUrlEncoded(payload) {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+      },
+      body: new URLSearchParams(payload),
+      mode: "cors",
+      cache: "no-store",
+    });
+
+    const data = await parseResponse(response);
+
+    if (!response.ok || String(data.success) !== "true") {
+      throw new Error(String(data.message || `HTTP ${response.status}`));
+    }
+  }
+
+  observedFields.forEach((field) => {
+    field.addEventListener("input", updateFormState);
+    field.addEventListener("change", updateFormState);
+  });
+
+  updateFormState();
+
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+    clearStatus();
 
     if (!contactForm.reportValidity()) {
-      if (status instanceof HTMLElement) {
-        status.textContent = "Bitte fuellen Sie die markierten Felder vollstaendig aus.";
+      showStatus("Bitte fuellen Sie die markierten Felder vollstaendig aus.", "err");
+      updateFormState();
+      return;
+    }
+
+    if (submitButton instanceof HTMLButtonElement) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Wird gesendet...";
+    }
+
+    const honeypot = contactForm.querySelector('input[name="_honey"]');
+
+    if (honeypot instanceof HTMLInputElement && honeypot.value.trim() !== "") {
+      contactForm.reset();
+      updateFormState();
+      showStatus("Danke fuer Ihre Anfrage. Wir melden uns zeitnah bei Ihnen.", "ok");
+      if (submitButton instanceof HTMLButtonElement) {
+        submitButton.textContent = "Anfrage senden";
       }
       return;
     }
 
-    const formData = new FormData(contactForm);
-    const name = String(formData.get("name") || "").trim();
-    const email = String(formData.get("email") || "").trim();
-    const phone = String(formData.get("phone") || "").trim();
-    const message = String(formData.get("message") || "").trim();
-    const subject = `Polarnest Anfrage von ${name}`;
-    const body = [
-      `Name: ${name}`,
-      `E-Mail: ${email}`,
-      `Telefon: ${phone || "nicht angegeben"}`,
-      "",
-      "Projektziel:",
-      message,
-    ].join("\n");
+    const debugId = new Date().toISOString().replace("T", " ").replace("Z", "");
+    const payload = buildPayload(debugId);
 
-    const mailtoUrl = `mailto:info@gut-bau.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    try {
+      try {
+        await sendJson(payload);
+      } catch {
+        await sendUrlEncoded(payload);
+      }
 
-    if (status instanceof HTMLElement) {
-      status.textContent =
-        "Ihr Mailprogramm wird geoeffnet. Falls nichts passiert, senden Sie Ihre Anfrage bitte direkt an info@gut-bau.com.";
+      contactForm.reset();
+      showStatus("Danke fuer Ihre Nachricht. Wir melden uns so schnell wie moeglich bei Ihnen.", "ok");
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "";
+      const activationHint =
+        message.toLowerCase().includes("activate") || message.toLowerCase().includes("confirm");
+
+      showStatus(
+        activationHint
+          ? "FormSubmit verlangt fuer diese Empfaengeradresse noch eine einmalige Bestaetigung. Bitte pruefen Sie das Postfach von info@gut-bau.com."
+          : "Senden fehlgeschlagen. Bitte versuchen Sie es spaeter erneut oder schreiben Sie direkt an info@gut-bau.com.",
+        "err",
+      );
+    } finally {
+      if (submitButton instanceof HTMLButtonElement) {
+        submitButton.textContent = "Anfrage senden";
+      }
+
+      updateFormState();
     }
-
-    window.location.href = mailtoUrl;
   });
 }

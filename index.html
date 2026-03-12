@@ -167,7 +167,8 @@
           <article class="benefit-card surface-card reveal">
             <div class="icon-badge" aria-hidden="true">
               <svg viewBox="0 0 24 24" role="presentation">
-                <path d="M4 12.5 9 17l11-11" />
+                <path d="M14 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" />
+                <path d="M10 10H4v4h3v2h2v-2h1" />
               </svg>
             </div>
             <h3>Bezugsfertig gedacht</h3>
@@ -181,7 +182,10 @@
           <article class="benefit-card surface-card reveal delay-1">
             <div class="icon-badge" aria-hidden="true">
               <svg viewBox="0 0 24 24" role="presentation">
-                <path d="M12 3v18M3 12h18" />
+                <path d="M4 5h7v6H4z" />
+                <path d="M13 5h7v4h-7z" />
+                <path d="M4 13h7v6H4z" />
+                <path d="M13 11h7v8h-7z" />
               </svg>
             </div>
             <h3>Individuell planbar</h3>
@@ -194,7 +198,9 @@
           <article class="benefit-card surface-card reveal delay-2">
             <div class="icon-badge" aria-hidden="true">
               <svg viewBox="0 0 24 24" role="presentation">
-                <path d="M6 19h12M7 16l1.5-8h7L17 16M9.5 8a2.5 2.5 0 1 1 5 0" />
+                <path d="M12 4 18 7.5 12 11 6 7.5 12 4Z" />
+                <path d="M6 12l6 3.5 6-3.5" />
+                <path d="M6 16l6 4 6-4" />
               </svg>
             </div>
             <h3>Hochwertige Fertigung</h3>
@@ -208,13 +214,20 @@
           <article class="benefit-card surface-card reveal delay-3">
             <div class="icon-badge" aria-hidden="true">
               <svg viewBox="0 0 24 24" role="presentation">
-                <path d="M5 7h14M5 12h14M5 17h14" />
+                <path d="M4 6h5v5H4z" />
+                <path d="M15 6h5v5h-5z" />
+                <path d="M9.5 14h5v5h-5z" />
+                <path d="M9 8.5h6" />
+                <path d="M6.5 11v3" />
+                <path d="M17.5 11v3" />
+                <path d="M9.5 16.5H8" />
+                <path d="M16 16.5h-1.5" />
               </svg>
             </div>
             <h3>Alles aus einer Hand</h3>
             <p>
               Beratung, Planung, Fertigung, Lieferung und Aufbau greifen in
-              einem abgestimmten Ablauf ineinander und vermeiden unnötige Reibung.
+              einem abgestimmten Ablauf ineinander und vermeiden unnoetige Reibung.
             </p>
           </article>
         </div>
@@ -266,7 +279,7 @@
               <h3>Hochwertige Hoelzer und Materialien aus dem Norden</h3>
               <p>
                 Die Materialwelt bleibt natuerlich, warm und praezise, ohne laut
-                zu werden oder kuenstlich luxuriös zu wirken.
+                zu werden oder kuenstlich luxurioes zu wirken.
               </p>
             </article>
 
@@ -475,7 +488,7 @@
             <h3>Vom Konzept bis zum Einzug begleitet</h3>
             <p>
               Ein klarer Projektablauf hilft dabei, Entscheidungen frueh zu
-              ordnen und den Weg zum fertigen Wohnraum verlässlich zu steuern.
+              ordnen und den Weg zum fertigen Wohnraum verlaesslich zu steuern.
             </p>
           </article>
 
@@ -709,48 +722,99 @@
             </div>
           </div>
 
-          <form class="contact-form surface-card reveal delay-1" data-contact-form novalidate>
-            <div class="form-row">
-              <label class="field">
-                <span>Name</span>
-                <input type="text" name="name" autocomplete="name" required />
-              </label>
+          <form
+            class="contact-form gf-form surface-card reveal delay-1"
+            data-contact-form
+            action="https://formsubmit.co/info@gut-bau.com"
+            method="post"
+            novalidate
+          >
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="GUTBAU Anfrage" />
+            <input type="hidden" name="_template" value="table" />
+            <input class="gf-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" />
 
-              <label class="field">
-                <span>E-Mail</span>
-                <input type="email" name="email" autocomplete="email" required />
-              </label>
+            <div class="gf-grid">
+              <div class="gf-field">
+                <label class="gf-label" for="contact-name">Name</label>
+                <input
+                  id="contact-name"
+                  name="name"
+                  type="text"
+                  class="gf-input"
+                  placeholder="Ihr Name"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+
+              <div class="gf-field">
+                <label class="gf-label" for="contact-email">E-Mail</label>
+                <input
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  class="gf-input"
+                  placeholder="max@mustermann.de"
+                  autocomplete="email"
+                  required
+                />
+              </div>
             </div>
 
-            <div class="form-row form-row--compact">
-              <label class="field">
-                <span>Telefon optional</span>
-                <input type="tel" name="phone" autocomplete="tel" />
-              </label>
+            <div class="gf-grid">
+              <div class="gf-field">
+                <label class="gf-label" for="contact-topic">Thema</label>
+                <select id="contact-topic" name="Thema" class="gf-input gf-select" required>
+                  <option value="" selected disabled>Auswaehlen..</option>
+                  <option value="Erstberatung">Erstberatung</option>
+                  <option value="Entwurf und Planung">Entwurf und Planung</option>
+                  <option value="Modell und Ausstattung">Modell und Ausstattung</option>
+                  <option value="Standort und Aufbau">Standort und Aufbau</option>
+                </select>
+              </div>
+
+              <div class="gf-field">
+                <label class="gf-label" for="contact-phone">Telefon optional</label>
+                <input
+                  id="contact-phone"
+                  name="Telefon"
+                  type="tel"
+                  class="gf-input"
+                  placeholder="+49 ..."
+                  autocomplete="tel"
+                />
+              </div>
             </div>
 
-            <label class="field">
-              <span>Nachricht oder Projektziel</span>
+            <div class="gf-field">
+              <label class="gf-label" for="contact-message">Nachricht</label>
               <textarea
-                name="message"
-                rows="6"
+                id="contact-message"
+                name="Nachricht"
+                class="gf-input gf-textarea"
                 placeholder="Erzaehlen Sie kurz, wie Sie Ihr Polarnest nutzen moechten."
+                rows="5"
                 required
               ></textarea>
-            </label>
+            </div>
 
-            <button class="button button--primary form-submit" type="submit">
-              Anfrage vorbereiten
-            </button>
+            <div class="gf-consent">
+              <input id="contact-agree" name="Einwilligung" type="checkbox" value="Ja" required />
+              <label for="contact-agree">Ich stimme der Verarbeitung meiner Daten gemaess der</label>
+              <a class="gf-privacy" href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklaerung</a>
+              <span>zu.</span>
+            </div>
+
+            <button class="gf-btn" type="submit" data-form-button>Anfrage senden</button>
 
             <p class="form-note">
-              Das Formular ist im Frontend vorbereitet und oeffnet aktuell Ihr
-              Mailprogramm an <a href="mailto:info@gut-bau.com">info@gut-bau.com</a>.
-              Fuer eine spaetere serverseitige Verarbeitung kann eine Vercel
-              Function oder ein Formularservice ergaenzt werden.
+              Ihre Anfrage wird direkt an <a href="mailto:info@gut-bau.com">info@gut-bau.com</a>
+              uebermittelt. Falls FormSubmit fuer diese Empfaengeradresse noch nicht aktiviert wurde,
+              fordert der Dienst beim ersten Versand einmalig eine Bestaetigung an.
             </p>
 
-            <p class="form-status" data-form-status aria-live="polite"></p>
+            <div class="gf-toast" data-form-status aria-live="polite" aria-atomic="true"></div>
           </form>
         </div>
       </section>
