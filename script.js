@@ -17,12 +17,14 @@ function closeNavigation() {
 
   siteHeader.classList.remove("is-open");
   navToggle.setAttribute("aria-expanded", "false");
+  document.body.classList.remove("nav-open");
 }
 
 if (siteHeader && navToggle && nav) {
   navToggle.addEventListener("click", () => {
     const isOpen = siteHeader.classList.toggle("is-open");
     navToggle.setAttribute("aria-expanded", String(isOpen));
+    document.body.classList.toggle("nav-open", isOpen);
   });
 
   navLinks.forEach((link) => {
@@ -41,6 +43,12 @@ if (siteHeader && navToggle && nav) {
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
+      closeNavigation();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 920) {
       closeNavigation();
     }
   });
@@ -356,7 +364,7 @@ if (contactForm instanceof HTMLFormElement) {
     clearStatus();
 
     if (!contactForm.reportValidity()) {
-      showStatus("Bitte fuellen Sie die markierten Felder vollstaendig aus.", "err");
+      showStatus("Bitte füllen Sie die markierten Felder vollständig aus.", "err");
       updateFormState();
       return;
     }
@@ -371,7 +379,7 @@ if (contactForm instanceof HTMLFormElement) {
     if (honeypot instanceof HTMLInputElement && honeypot.value.trim() !== "") {
       contactForm.reset();
       updateFormState();
-      showStatus("Danke fuer Ihre Anfrage. Wir melden uns zeitnah bei Ihnen.", "ok");
+      showStatus("Danke für Ihre Anfrage. Wir melden uns zeitnah bei Ihnen.", "ok");
       if (submitButton instanceof HTMLButtonElement) {
         submitButton.textContent = "Anfrage senden";
       }
@@ -389,7 +397,7 @@ if (contactForm instanceof HTMLFormElement) {
       }
 
       contactForm.reset();
-      showStatus("Danke fuer Ihre Nachricht. Wir melden uns so schnell wie moeglich bei Ihnen.", "ok");
+      showStatus("Danke für Ihre Nachricht. Wir melden uns so schnell wie möglich bei Ihnen.", "ok");
     } catch (error) {
       const message = error instanceof Error ? error.message : "";
       const activationHint =
@@ -397,8 +405,8 @@ if (contactForm instanceof HTMLFormElement) {
 
       showStatus(
         activationHint
-          ? "FormSubmit verlangt fuer diese Empfaengeradresse noch eine einmalige Bestaetigung. Bitte pruefen Sie das Postfach von info@gut-bau.com."
-          : "Senden fehlgeschlagen. Bitte versuchen Sie es spaeter erneut oder schreiben Sie direkt an info@gut-bau.com.",
+          ? "FormSubmit verlangt für diese Empfängeradresse noch eine einmalige Bestätigung. Bitte prüfen Sie das Postfach von info@gut-bau.com."
+          : "Senden fehlgeschlagen. Bitte versuchen Sie es später erneut oder schreiben Sie direkt an info@gut-bau.com.",
         "err",
       );
     } finally {
