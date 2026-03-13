@@ -292,7 +292,7 @@ body.nav-open {
 .section {
   width: var(--container);
   margin: 0 auto;
-  padding: 56px 0 94px;
+  padding: 56px 0;
 }
 
 main > .section + .section {
@@ -1733,7 +1733,7 @@ li {
 
 @media (max-width: 720px) {
   .section {
-    padding: 42px 0 78px;
+    padding: 42px 0;
   }
 
   .hero {
